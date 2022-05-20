@@ -1,2 +1,2 @@
 # Gravity-Rocks
- My first crappy gam
+ My first crappy game
