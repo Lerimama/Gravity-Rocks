@@ -1,0 +1,147 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/Hajskor.gd" type="Script" id=1]
+[ext_resource path="res://fonts/LLPIXEL3.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://textures/vesolje.jpg" type="Texture" id=3]
+[ext_resource path="res://textures/raketa.png" type="Texture" id=4]
+[ext_resource path="res://textures/ogenj_03.png" type="Texture" id=5]
+[ext_resource path="res://textures/ogenj_02.png" type="Texture" id=6]
+[ext_resource path="res://textures/ogenj_01.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "ogenj_gasa",
+"speed": 7.0
+} ]
+
+[node name="lestvica" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 882.0, 640.0 ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.529412 )
+position = Vector2( 672, 264 )
+texture = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="prvi" type="Label" parent="CanvasLayer"]
+modulate = Color( 1, 0.890196, 0, 1 )
+margin_left = 400.0
+margin_top = 217.0
+margin_right = 883.0
+margin_bottom = 266.0
+custom_fonts/font = SubResource( 3 )
+text = "1. 00000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="drugi" type="Label" parent="CanvasLayer"]
+margin_left = 400.0
+margin_top = 281.0
+margin_right = 883.0
+margin_bottom = 330.0
+custom_fonts/font = SubResource( 3 )
+text = "2. 00000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tretji" type="Label" parent="CanvasLayer"]
+margin_left = 400.0
+margin_top = 345.0
+margin_right = 883.0
+margin_bottom = 394.0
+custom_fonts/font = SubResource( 3 )
+text = "3. 00000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cetrti" type="Label" parent="CanvasLayer"]
+margin_left = 400.0
+margin_top = 409.0
+margin_right = 883.0
+margin_bottom = 458.0
+custom_fonts/font = SubResource( 3 )
+text = "4. 00000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="peti" type="Label" parent="CanvasLayer"]
+margin_left = 400.0
+margin_top = 473.0
+margin_right = 883.0
+margin_bottom = 522.0
+custom_fonts/font = SubResource( 3 )
+text = "5. 00000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="prvihpet" type="Label" parent="CanvasLayer"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -294.0
+margin_bottom = -172.0
+custom_fonts/font = SubResource( 1 )
+text = "PRVIH 5"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bise" type="Label" parent="CanvasLayer" groups=["VisibleInGameOver"]]
+modulate = Color( 0.427451, 0.427451, 0.427451, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -216.0
+margin_top = 595.0
+margin_right = 216.0
+margin_bottom = -76.0
+custom_fonts/font = SubResource( 5 )
+text = "Stisn  [enter]  za meni"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="raketa" type="Sprite" parent="."]
+visible = false
+position = Vector2( 404, 261 )
+rotation = 0.52171
+texture = ExtResource( 4 )
+
+[node name="Ogenj_anim" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 243.535, 537.129 )
+rotation = 0.52171
+frames = SubResource( 2 )
+animation = "ogenj_gasa"
+playing = true

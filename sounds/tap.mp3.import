@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tap.mp3-d9d04346bb502e053c9aedd13526946f.mp3str"
+
+[deps]
+
+source_file="res://sounds/tap.mp3"
+dest_files=[ "res://.import/tap.mp3-d9d04346bb502e053c9aedd13526946f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

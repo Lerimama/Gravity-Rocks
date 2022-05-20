@@ -1,0 +1,1 @@
+{"cetrti":2,"drugi":4,"hajskor":5,"peti":1,"tretji":3}

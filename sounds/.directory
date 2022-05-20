@@ -1,0 +1,8 @@
+[Dolphin]
+HeaderColumnWidths=537,82,160,160,160,160
+PreviewsShown=false
+SortRole=size
+Timestamp=2022,3,15,12,2,34.262
+Version=4
+ViewMode=1
+VisibleRoles=CustomizedDetails,Details_text,Details_size,Details_modificationtime,Details_creationtime,Details_accesstime,Details_type

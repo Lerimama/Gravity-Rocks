@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lalala.mp3-7bfec93c29e09038a82e6c40b62ba06b.mp3str"
+
+[deps]
+
+source_file="res://sounds/lalala.mp3"
+dest_files=[ "res://.import/lalala.mp3-7bfec93c29e09038a82e6c40b62ba06b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

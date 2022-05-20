@@ -1,0 +1,264 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/Meni.gd" type="Script" id=1]
+[ext_resource path="res://fonts/LLPIXEL3.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://textures/vesolje.jpg" type="Texture" id=3]
+[ext_resource path="res://textures/raketa.png" type="Texture" id=4]
+[ext_resource path="res://textures/ogenj_03.png" type="Texture" id=5]
+[ext_resource path="res://textures/ogenj_02.png" type="Texture" id=6]
+[ext_resource path="res://textures/ogenj_01.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "ogenj_gasa",
+"speed": 7.0
+} ]
+
+[node name="meni" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 882.0 ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.529412 )
+position = Vector2( 597, 71 )
+texture = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Play_btn" type="Button" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 133.0
+margin_top = -576.0
+margin_right = 619.0
+margin_bottom = -440.0
+custom_fonts/font = SubResource( 1 )
+text = "ŠTARTEJ "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_enter" type="Label" parent="CanvasLayer"]
+margin_left = 640.0
+margin_top = 167.0
+margin_right = 1123.0
+margin_bottom = 197.0
+custom_fonts/font = SubResource( 3 )
+text = "Prtisn  [enter]  in"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_enter11" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.447059, 0.447059, 0.447059, 1 )
+margin_left = 640.0
+margin_top = 327.0
+margin_right = 1123.0
+margin_bottom = 357.0
+custom_fonts/font = SubResource( 7 )
+text = "Prtisn  [esc]  in za lestvico prvih 5"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_enter10" type="Label" parent="CanvasLayer"]
+margin_left = 640.0
+margin_top = 190.0
+margin_right = 1123.0
+margin_bottom = 312.0
+custom_fonts/font = SubResource( 1 )
+text = "ŠTARTEJ"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_glasba2" type="Label" parent="CanvasLayer"]
+margin_left = 675.0
+margin_top = 440.0
+margin_right = 801.0
+margin_bottom = 470.0
+custom_fonts/font = SubResource( 3 )
+text = "gasaaaaa"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_enter2" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.721569, 0.54902, 1, 1 )
+margin_left = 838.0
+margin_top = 440.0
+margin_right = 1009.0
+margin_bottom = 470.0
+custom_fonts/font = SubResource( 3 )
+text = "[P]    [   ]    JP [   ]"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_enter3" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.721569, 0.54902, 1, 1 )
+margin_left = 894.0
+margin_top = 470.0
+margin_right = 922.0
+margin_bottom = 500.0
+rect_rotation = -89.9999
+custom_fonts/font = SubResource( 3 )
+text = ">"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_enter4" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.721569, 0.54902, 1, 1 )
+margin_left = 981.0
+margin_top = 470.0
+margin_right = 1009.0
+margin_bottom = 500.0
+rect_rotation = -89.9999
+custom_fonts/font = SubResource( 3 )
+text = ">"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_glasba3" type="Label" parent="CanvasLayer"]
+margin_left = 675.0
+margin_top = 480.0
+margin_right = 801.0
+margin_bottom = 510.0
+custom_fonts/font = SubResource( 3 )
+text = "bremzaj"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_enter5" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.721569, 0.54902, 1, 1 )
+margin_left = 838.0
+margin_top = 480.0
+margin_right = 1017.0
+margin_bottom = 510.0
+custom_fonts/font = SubResource( 3 )
+text = "[L]    [   ]    JP [   ]"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_glasba5" type="Label" parent="CanvasLayer"]
+margin_left = 675.0
+margin_top = 576.0
+margin_right = 801.0
+margin_bottom = 606.0
+custom_fonts/font = SubResource( 3 )
+text = "streljaj"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_enter9" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.721569, 0.54902, 1, 1 )
+margin_left = 838.0
+margin_top = 576.0
+margin_right = 1015.0
+margin_bottom = 606.0
+custom_fonts/font = SubResource( 3 )
+text = "[space]    JP [2]"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_enter6" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.721569, 0.54902, 1, 1 )
+margin_left = 892.0
+margin_top = 513.0
+margin_right = 920.0
+margin_bottom = 543.0
+rect_rotation = -89.9999
+custom_fonts/font = SubResource( 3 )
+text = "<"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_enter7" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.721569, 0.54902, 1, 1 )
+margin_left = 979.0
+margin_top = 513.0
+margin_right = 1007.0
+margin_bottom = 543.0
+rect_rotation = -89.9999
+custom_fonts/font = SubResource( 3 )
+text = "<"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_glasba4" type="Label" parent="CanvasLayer"]
+margin_left = 633.0
+margin_top = 520.0
+margin_right = 801.0
+margin_bottom = 550.0
+custom_fonts/font = SubResource( 3 )
+text = "vrti, vrti, vrti"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kontrole_enter8" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.721569, 0.54902, 1, 1 )
+margin_left = 838.0
+margin_top = 520.0
+margin_right = 1132.0
+margin_bottom = 550.0
+custom_fonts/font = SubResource( 3 )
+text = "[A / S]    [< / >]    JP [< / >]"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="raketa" type="Sprite" parent="."]
+position = Vector2( 401.238, 257.099 )
+rotation = 0.52171
+texture = ExtResource( 4 )
+
+[node name="Ogenj_anim" type="AnimatedSprite" parent="."]
+position = Vector2( 243.535, 537.129 )
+rotation = 0.52171
+frames = SubResource( 2 )
+animation = "ogenj_gasa"
+playing = true
+
+[connection signal="button_down" from="CanvasLayer/Play_btn" to="." method="_on_Play_btn_button_down"]
