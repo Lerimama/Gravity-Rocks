@@ -1,2 +1,2 @@
 # Gravity-Rocks
- My first crappy game
+My first try to make a game.
