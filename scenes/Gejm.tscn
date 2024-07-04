@@ -1,53 +1,45 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://fonts/LLPIXEL3.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://textures/vesolje.jpg" type="Texture" id=2]
+[ext_resource path="res://resources/FontLarge.tres" type="DynamicFont" id=1]
+[ext_resource path="res://resources/textures/vesolje.jpg" type="Texture" id=2]
 [ext_resource path="res://scripts/Gejm.gd" type="Script" id=3]
 [ext_resource path="res://scripts/Kamera.gd" type="Script" id=4]
-[ext_resource path="res://scripts/HUD.gd" type="Script" id=5]
+[ext_resource path="res://scripts/Hud.gd" type="Script" id=5]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://sounds/kaselj.mp3" type="AudioStream" id=7]
-[ext_resource path="res://sounds/lego_b.mp3" type="AudioStream" id=8]
-[ext_resource path="res://sounds/lego_s.mp3" type="AudioStream" id=9]
-[ext_resource path="res://sounds/kazu.mp3" type="AudioStream" id=10]
-[ext_resource path="res://sounds/muzika.wav" type="AudioStream" id=11]
-[ext_resource path="res://sounds/cincin.mp3" type="AudioStream" id=12]
-[ext_resource path="res://sounds/lalala.mp3" type="AudioStream" id=13]
+[ext_resource path="res://resources/sounds/kaselj.mp3" type="AudioStream" id=7]
+[ext_resource path="res://resources/sounds/lego_b.mp3" type="AudioStream" id=8]
+[ext_resource path="res://resources/sounds/lego_s.mp3" type="AudioStream" id=9]
+[ext_resource path="res://resources/sounds/loose_jingle_GAMEOVER.wav" type="AudioStream" id=10]
+[ext_resource path="res://resources/sounds/muza/POL-impulses-short.wav" type="AudioStream" id=11]
+[ext_resource path="res://resources/sounds/cincin.mp3" type="AudioStream" id=12]
+[ext_resource path="res://resources/sounds/win_jingle_270528__littlerobotsoundfactory__jingle_win_00.wav" type="AudioStream" id=13]
+[ext_resource path="res://gravity_rocks_theme.tres" type="Theme" id=14]
+[ext_resource path="res://resources/gravity_rocks_gui_atlas.png" type="Texture" id=15]
+[ext_resource path="res://resources/gui_arrow.tres" type="Texture" id=16]
+[ext_resource path="res://scripts/Pavza.gd" type="Script" id=17]
+[ext_resource path="res://resources/sounds/gui/btn_focus_change.wav" type="AudioStream" id=18]
+[ext_resource path="res://resources/sounds/gui/btn_confirm_NFF-home-switch-on.wav" type="AudioStream" id=19]
+[ext_resource path="res://resources/sounds/gui/btn_cancel_NFF-home-switch-off.wav" type="AudioStream" id=20]
 
-[sub_resource type="DynamicFont" id=5]
-size = 24
-font_data = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 15 )
+region = Rect2( 101, 6, 24, 22 )
+margin = Rect2( 0, 2, 0, 0 )
 
-[sub_resource type="DynamicFont" id=4]
-size = 24
-font_data = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 15 )
+region = Rect2( 71, 6, 18, 22 )
+margin = Rect2( 0, 2, 0, 0 )
 
-[sub_resource type="DynamicFont" id=1]
-size = 140
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 42
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 40
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 24
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 24
-font_data = ExtResource( 1 )
+[sub_resource type="AudioStreamRandomPitch" id=3]
+audio_stream = ExtResource( 7 )
+random_pitch = 1.05
 
 [node name="Gejm" type="Node2D"]
-position = Vector2( -3, 0 )
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 60.0, 678.0, 45.0 ],
-"_edit_vertical_guides_": [ 640.0, 60.0, 1210.0 ]
+"_edit_horizontal_guides_": [ 60.0, 678.0, 45.0, 464.0, 504.0 ],
+"_edit_vertical_guides_": [ 640.0, 40.0, 1240.0 ]
 }
 
 [node name="Vesolje" type="Sprite" parent="."]
@@ -85,274 +77,477 @@ one_shot = true
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 5 )
 
-[node name="serija_kamnov" type="Label" parent="HUD" groups=["VisibleInGame"]]
-margin_left = 59.0
-margin_top = 653.0
-margin_right = 276.0
-margin_bottom = 683.0
-custom_fonts/font = SubResource( 5 )
-text = "Serija: 00"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Game" type="Control" parent="HUD"]
+margin_right = 1280.0
+margin_bottom = 720.0
 
-[node name="kontrole_glasba" type="Label" parent="HUD" groups=["VisibleInGame"]]
-margin_left = 1122.0
-margin_top = 652.0
-margin_right = 1305.0
-margin_bottom = 682.0
-custom_fonts/font = SubResource( 5 )
-text = "muzika"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="kontrole_enter" type="Label" parent="HUD" groups=["VisibleInGame"]]
-modulate = Color( 0.721569, 0.54902, 1, 1 )
-margin_left = 1005.0
-margin_top = 652.0
-margin_right = 1106.0
-margin_bottom = 682.0
-custom_fonts/font = SubResource( 5 )
-text = "[enter]"
+[node name="serija_kamnov_label" type="Label" parent="HUD/Game"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -225.0
+margin_top = -67.0
+margin_right = -83.0
+margin_bottom = -37.0
+theme = ExtResource( 14 )
+text = "LEVEL:"
 align = 2
+
+[node name="serija_kamnov" type="Label" parent="HUD/Game"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -73.0
+margin_top = -67.0
+margin_right = -37.0
+margin_bottom = -37.0
+theme = ExtResource( 14 )
+text = "00"
+
+[node name="score_p1" type="Label" parent="HUD/Game"]
+margin_left = 137.0
+margin_top = 21.0
+margin_right = 191.0
+margin_bottom = 49.0
+theme = ExtResource( 14 )
+text = "0"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_group_": true
 }
 
-[node name="kontrole_glasba2" type="Label" parent="HUD" groups=["VisibleInGame"]]
-margin_left = 834.0
-margin_top = 652.0
-margin_right = 1017.0
-margin_bottom = 682.0
-custom_fonts/font = SubResource( 5 )
-text = "prekini igro"
+[node name="TextureRect" type="TextureRect" parent="HUD/Game/score_p1"]
+margin_left = -33.0
+margin_top = 3.0
+margin_right = -9.0
+margin_bottom = 25.0
+texture = SubResource( 2 )
+
+[node name="lajf_p1" type="Label" parent="HUD/Game"]
+margin_left = 64.0
+margin_top = 21.0
+margin_right = 82.0
+margin_bottom = 49.0
+theme = ExtResource( 14 )
+text = "3"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_group_": true
 }
 
-[node name="kontrole_enter2" type="Label" parent="HUD" groups=["VisibleInGame"]]
-modulate = Color( 0.721569, 0.54902, 1, 1 )
-margin_left = 717.0
-margin_top = 652.0
-margin_right = 818.0
-margin_bottom = 682.0
-custom_fonts/font = SubResource( 5 )
-text = "[esc]"
+[node name="TextureRect" type="TextureRect" parent="HUD/Game/lajf_p1"]
+margin_left = -26.0
+margin_top = 3.0
+margin_right = -8.0
+margin_bottom = 25.0
+texture = SubResource( 1 )
+
+[node name="tajm" type="Label" parent="HUD/Game"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -94.0
+margin_top = 21.0
+margin_right = -40.0
+margin_bottom = 51.0
+grow_horizontal = 0
+theme = ExtResource( 14 )
+text = "32s"
 align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="score_p1" type="Label" parent="HUD" groups=["VisibleInGame"]]
-margin_left = 60.0
-margin_top = 38.0
-margin_right = 189.0
+[node name="rekord" type="Label" parent="HUD/Game"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = -65.0
+margin_right = 256.0
+margin_bottom = -37.0
+theme = ExtResource( 14 )
+text = "TOP SCORE: %s"
+
+[node name="Pavza" type="Control" parent="HUD"]
+pause_mode = 2
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+script = ExtResource( 17 )
+
+[node name="Undi" type="ColorRect" parent="HUD/Pavza"]
+modulate = Color( 1, 1, 1, 0.392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="pavza" type="Label" parent="HUD/Pavza"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -342.0
+margin_top = -127.0
+margin_right = 344.0
+margin_bottom = -99.0
+grow_horizontal = 2
+theme = ExtResource( 14 )
+text = "Game on pause ..."
+align = 1
+autowrap = true
+
+[node name="BtnContainerContinue" type="HBoxContainer" parent="HUD/Pavza"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -81.0
+margin_top = -70.0
+margin_right = 81.0
+margin_bottom = -31.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+custom_constants/separation = 12
+
+[node name="ContinueBtn" type="Button" parent="HUD/Pavza/BtnContainerContinue"]
+margin_top = 3.0
+margin_right = 162.0
+margin_bottom = 36.0
+focus_neighbour_top = NodePath("../../BtnContainer3/ExitBtn")
+mouse_default_cursor_shape = 2
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+text = "CONTINUE"
+
+[node name="Icon" type="TextureRect" parent="HUD/Pavza/BtnContainerContinue"]
+visible = false
+margin_left = 174.0
+margin_top = 9.0
+margin_right = 186.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+texture = ExtResource( 16 )
+
+[node name="BtnContainer" type="HBoxContainer" parent="HUD/Pavza"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -73.0
+margin_top = -22.0
+margin_right = 74.0
+margin_bottom = 17.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+custom_constants/separation = 12
+
+[node name="PlayBtn" type="Button" parent="HUD/Pavza/BtnContainer"]
+margin_top = 3.0
+margin_right = 147.0
+margin_bottom = 36.0
+focus_neighbour_left = NodePath("../../../GameOver/BtnContainer3/ExitBtn")
+mouse_default_cursor_shape = 2
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+text = "RESTART"
+
+[node name="Icon" type="TextureRect" parent="HUD/Pavza/BtnContainer"]
+visible = false
+margin_top = 9.0
+margin_right = 18.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+texture = ExtResource( 16 )
+
+[node name="BtnContainer2" type="HBoxContainer" parent="HUD/Pavza"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = 26.0
+margin_right = 120.0
 margin_bottom = 65.0
-custom_fonts/font = SubResource( 4 )
-text = "Score: 0000"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+custom_constants/separation = 12
 
-[node name="lajf_p1" type="Label" parent="HUD" groups=["VisibleInGame"]]
-margin_left = 62.0
-margin_top = 69.0
-margin_right = 148.0
-margin_bottom = 96.0
-custom_fonts/font = SubResource( 4 )
-text = "Lajf: 0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="QuitBtn" type="Button" parent="HUD/Pavza/BtnContainer2"]
+margin_right = 240.0
+margin_bottom = 39.0
+focus_neighbour_top = NodePath("../../BtnContainer/PlayBtn")
+focus_neighbour_bottom = NodePath("../../BtnContainer3/ExitBtn")
+mouse_default_cursor_shape = 2
+theme = ExtResource( 14 )
+text = "QUIT TO MENU"
+align = 0
 
-[node name="tajm" type="Label" parent="HUD" groups=["VisibleInGame"]]
-margin_left = 1019.0
-margin_top = 37.0
-margin_right = 1208.0
-margin_bottom = 67.0
-custom_fonts/font = SubResource( 4 )
-text = "OOO"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Icon" type="TextureRect" parent="HUD/Pavza/BtnContainer2"]
+visible = false
+margin_top = 9.0
+margin_right = 18.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 0, 20 )
+focus_neighbour_top = NodePath("../QuitBtn")
+focus_neighbour_bottom = NodePath("../QuitBtn")
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+texture = ExtResource( 16 )
 
-[node name="gejmover" type="Label" parent="HUD" groups=["VisibleInGameOver"]]
+[node name="BtnContainer3" type="HBoxContainer" parent="HUD/Pavza"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = 74.0
+margin_right = 92.0
+margin_bottom = 113.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+custom_constants/separation = 12
+
+[node name="ExitBtn" type="Button" parent="HUD/Pavza/BtnContainer3"]
+margin_right = 183.0
+margin_bottom = 39.0
+focus_neighbour_bottom = NodePath("../../BtnContainerContinue/ContinueBtn")
+mouse_default_cursor_shape = 2
+theme = ExtResource( 14 )
+text = "EXIT GAME"
+align = 0
+
+[node name="Icon" type="TextureRect" parent="HUD/Pavza/BtnContainer3"]
+visible = false
+margin_top = 9.0
+margin_right = 18.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 0, 20 )
+focus_neighbour_top = NodePath("../ExitBtn")
+focus_neighbour_bottom = NodePath("../ExitBtn")
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+texture = ExtResource( 16 )
+
+[node name="GameOver" type="Control" parent="HUD"]
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="gejmover" type="Label" parent="HUD/GameOver"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -425.0
-margin_top = -132.0
+margin_top = -229.0
 margin_right = 425.0
-margin_bottom = 38.0
-custom_fonts/font = SubResource( 1 )
+margin_bottom = -59.0
+theme = ExtResource( 14 )
+custom_fonts/font = ExtResource( 1 )
 text = "GAME OVER"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="igraj_btn" type="Button" parent="HUD" groups=["VisibleInGameOver"]]
+[node name="rezultat" type="Label" parent="HUD/GameOver"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -124.0
-margin_top = 455.0
-margin_right = -20.0
-margin_bottom = 518.0
-custom_fonts/font = SubResource( 2 )
-text = "JA"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = -342.0
+margin_top = -55.0
+margin_right = 344.0
+margin_bottom = 4.0
+grow_horizontal = 2
+theme = ExtResource( 14 )
+text = "You destroyed %27 rocks. Your score ranks %4th among the all-time best."
+align = 1
+autowrap = true
 
-[node name="neigraj_btn" type="Button" parent="HUD" groups=["VisibleInGameOver"]]
+[node name="BtnContainer" type="HBoxContainer" parent="HUD/GameOver"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 32.0
-margin_top = 454.0
-margin_right = 136.0
-margin_bottom = 517.0
-custom_fonts/font = SubResource( 2 )
-text = "NE"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = -99.0
+margin_top = 90.0
+margin_right = 99.0
+margin_bottom = 129.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+custom_constants/separation = 12
 
-[node name="rezultat" type="Label" parent="HUD" groups=["VisibleInGameOver"]]
-margin_left = 432.0
-margin_top = 126.0
-margin_right = 850.0
-margin_bottom = 208.0
-custom_colors/font_color = Color( 0.54902, 0.956863, 1, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "0000"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="PlayBtn" type="Button" parent="HUD/GameOver/BtnContainer"]
+margin_top = 3.0
+margin_right = 198.0
+margin_bottom = 36.0
+focus_neighbour_top = NodePath("../../BtnContainer3/ExitBtn")
+mouse_default_cursor_shape = 2
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+text = "PLAY AGAIN"
 
-[node name="bise" type="Label" parent="HUD" groups=["VisibleInGameOver"]]
-margin_left = 432.0
-margin_top = 430.0
-margin_right = 850.0
-margin_bottom = 512.0
-custom_colors/font_color = Color( 0.721569, 0.54902, 1, 1 )
-custom_fonts/font = SubResource( 3 )
-text = "Bi še?"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Icon" type="TextureRect" parent="HUD/GameOver/BtnContainer"]
+visible = false
+margin_top = 9.0
+margin_right = 18.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 0, 20 )
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+texture = ExtResource( 16 )
 
-[node name="muzika_ja" type="Button" parent="HUD" groups=["VisibleInGame"]]
-margin_left = 1256.0
-margin_top = 818.0
-margin_right = 1344.0
-margin_bottom = 854.0
-custom_fonts/font = SubResource( 6 )
-text = "MUZA"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="BtnContainer2" type="HBoxContainer" parent="HUD/GameOver"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = 138.0
+margin_right = 120.0
+margin_bottom = 177.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+custom_constants/separation = 12
 
-[node name="gemovertajmer" type="Timer" parent="HUD"]
-wait_time = 3.0
-one_shot = true
+[node name="QuitBtn" type="Button" parent="HUD/GameOver/BtnContainer2"]
+margin_right = 240.0
+margin_bottom = 39.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 14 )
+text = "QUIT TO MENU"
+align = 0
 
-[node name="kontrole_enter3" type="Label" parent="HUD" groups=["VisibleInGameOver"]]
-modulate = Color( 0.447059, 0.447059, 0.447059, 1 )
-margin_left = 540.0
-margin_top = 569.0
-margin_right = 741.0
-margin_bottom = 599.0
-custom_fonts/font = SubResource( 7 )
-text = "Stisn  [esc]  za NE"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Icon" type="TextureRect" parent="HUD/GameOver/BtnContainer2"]
+visible = false
+margin_top = 9.0
+margin_right = 18.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 0, 20 )
+focus_neighbour_top = NodePath("../QuitBtn")
+focus_neighbour_bottom = NodePath("../QuitBtn")
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+texture = ExtResource( 16 )
 
-[node name="kontrole_enter5" type="Label" parent="HUD" groups=["VisibleInGameOver"]]
-modulate = Color( 0.447059, 0.447059, 0.447059, 1 )
-margin_left = 441.0
-margin_top = 506.0
-margin_right = 837.0
-margin_bottom = 558.0
-custom_fonts/font = SubResource( 2 )
-text = "Stisn  [enter]  za JA"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="BtnContainer3" type="HBoxContainer" parent="HUD/GameOver"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = 186.0
+margin_right = 92.0
+margin_bottom = 225.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+custom_constants/separation = 12
 
-[node name="rekord" type="Label" parent="HUD" groups=["VisibleInGame"]]
-margin_left = 548.0
-margin_top = 39.0
-margin_right = 732.0
-margin_bottom = 88.0
-custom_fonts/font = SubResource( 4 )
-text = "0000"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="ExitBtn" type="Button" parent="HUD/GameOver/BtnContainer3"]
+margin_right = 183.0
+margin_bottom = 39.0
+focus_neighbour_bottom = NodePath("../../BtnContainer/PlayBtn")
+mouse_default_cursor_shape = 2
+theme = ExtResource( 14 )
+text = "EXIT GAME"
+align = 0
 
-[node name="laser" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-volume_db = -5.266
-pitch_scale = 1.66
+[node name="Icon" type="TextureRect" parent="HUD/GameOver/BtnContainer3"]
+visible = false
+margin_top = 9.0
+margin_right = 18.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 0, 20 )
+focus_neighbour_top = NodePath("../ExitBtn")
+focus_neighbour_bottom = NodePath("../ExitBtn")
+size_flags_vertical = 4
+theme = ExtResource( 14 )
+texture = ExtResource( 16 )
 
-[node name="hahaha" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
-volume_db = -3.041
+[node name="naprej" type="AudioStreamPlayer" parent="HUD"]
+pause_mode = 2
+stream = ExtResource( 19 )
+volume_db = -15.0
 
-[node name="muzika" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
+[node name="nazaj" type="AudioStreamPlayer" parent="HUD"]
+pause_mode = 2
+stream = ExtResource( 20 )
+volume_db = -15.0
 
-[node name="eksplozija_raketa" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-volume_db = -3.359
-pitch_scale = 0.88
-
-[node name="eksplozija_mali_kamn" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-volume_db = 3.452
-pitch_scale = 1.75
-
-[node name="eksplozija_kamn" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
-volume_db = -2.633
-pitch_scale = 0.8
-
-[node name="metek_zadetek" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
-volume_db = -2.633
-pitch_scale = 1.35
+[node name="fokus" type="AudioStreamPlayer" parent="HUD"]
+pause_mode = 2
+stream = ExtResource( 18 )
+volume_db = -15.0
 
 [node name="deathmode" type="Timer" parent="."]
 
 [node name="mali_deathmode" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
+
+[node name="laser" type="AudioStreamPlayer" parent="."]
+stream = SubResource( 3 )
+volume_db = -5.0
+pitch_scale = 1.7
+
+[node name="hahaha" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="muzika" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 11 )
+volume_db = -7.0
+
+[node name="eksplozija_raketa" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -5.0
+pitch_scale = 0.88
+
+[node name="eksplozija_mali_kamn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -3.0
+pitch_scale = 1.75
+
+[node name="eksplozija_kamn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+pitch_scale = 0.85
+
+[node name="metek_zadetek" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -3.0
+pitch_scale = 1.35
 
 [node name="zdravljica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
-volume_db = -3.041
+volume_db = -7.0
 
 [connection signal="raketa_dest" from="Player" to="." method="_on_Player_raketa_dest"]
 [connection signal="timeout" from="novlajf_timer" to="." method="_on_novlajf_timer_timeout"]
-[connection signal="start_game" from="HUD" to="." method="_on_HUD_start_game"]
-[connection signal="pressed" from="HUD/igraj_btn" to="HUD" method="_on_igraj_btn_pressed"]
-[connection signal="pressed" from="HUD/neigraj_btn" to="HUD" method="_on_neigraj_btn_pressed"]
-[connection signal="pressed" from="HUD/muzika_ja" to="." method="_on_muzika_ja_pressed"]
-[connection signal="timeout" from="HUD/gemovertajmer" to="." method="_on_gemovertajmer_timeout"]
+[connection signal="button_down" from="HUD/Pavza/BtnContainerContinue/ContinueBtn" to="HUD/Pavza" method="_on_PavzaBtn_button_down"]
+[connection signal="focus_entered" from="HUD/Pavza/BtnContainerContinue/ContinueBtn" to="HUD/Pavza" method="_on_PavzaBtn_focus_entered"]
+[connection signal="focus_exited" from="HUD/Pavza/BtnContainerContinue/ContinueBtn" to="HUD/Pavza" method="_on_PavzaBtn_focus_exited"]
+[connection signal="mouse_entered" from="HUD/Pavza/BtnContainerContinue/ContinueBtn" to="HUD/Pavza" method="_on_PavzaBtn_mouse_entered"]
+[connection signal="button_down" from="HUD/Pavza/BtnContainer/PlayBtn" to="HUD/Pavza" method="_on_PlayBtn_button_down"]
+[connection signal="focus_entered" from="HUD/Pavza/BtnContainer/PlayBtn" to="HUD/Pavza" method="_on_PlayBtn_focus_entered"]
+[connection signal="focus_exited" from="HUD/Pavza/BtnContainer/PlayBtn" to="HUD/Pavza" method="_on_PlayBtn_focus_exited"]
+[connection signal="mouse_entered" from="HUD/Pavza/BtnContainer/PlayBtn" to="HUD/Pavza" method="_on_PlayBtn_mouse_entered"]
+[connection signal="button_down" from="HUD/Pavza/BtnContainer2/QuitBtn" to="HUD/Pavza" method="_on_QuitBtn_button_down"]
+[connection signal="focus_entered" from="HUD/Pavza/BtnContainer2/QuitBtn" to="HUD/Pavza" method="_on_QuitBtn_focus_entered"]
+[connection signal="focus_exited" from="HUD/Pavza/BtnContainer2/QuitBtn" to="HUD/Pavza" method="_on_QuitBtn_focus_exited"]
+[connection signal="mouse_entered" from="HUD/Pavza/BtnContainer2/QuitBtn" to="HUD/Pavza" method="_on_QuitBtn_mouse_entered"]
+[connection signal="button_down" from="HUD/Pavza/BtnContainer3/ExitBtn" to="HUD/Pavza" method="_on_ExitBtn_button_down"]
+[connection signal="focus_entered" from="HUD/Pavza/BtnContainer3/ExitBtn" to="HUD/Pavza" method="_on_ExitBtn_focus_entered"]
+[connection signal="focus_exited" from="HUD/Pavza/BtnContainer3/ExitBtn" to="HUD/Pavza" method="_on_ExitBtn_focus_exited"]
+[connection signal="mouse_entered" from="HUD/Pavza/BtnContainer3/ExitBtn" to="HUD/Pavza" method="_on_ExitBtn_mouse_entered"]
+[connection signal="button_down" from="HUD/GameOver/BtnContainer/PlayBtn" to="HUD" method="_on_PlayBtn_button_down"]
+[connection signal="focus_entered" from="HUD/GameOver/BtnContainer/PlayBtn" to="HUD" method="_on_PlayBtn_focus_entered"]
+[connection signal="focus_exited" from="HUD/GameOver/BtnContainer/PlayBtn" to="HUD" method="_on_PlayBtn_focus_exited"]
+[connection signal="mouse_entered" from="HUD/GameOver/BtnContainer/PlayBtn" to="HUD" method="_on_PlayBtn_mouse_entered"]
+[connection signal="button_down" from="HUD/GameOver/BtnContainer2/QuitBtn" to="HUD" method="_on_QuitBtn_button_down"]
+[connection signal="focus_entered" from="HUD/GameOver/BtnContainer2/QuitBtn" to="HUD" method="_on_QuitBtn_focus_entered"]
+[connection signal="focus_exited" from="HUD/GameOver/BtnContainer2/QuitBtn" to="HUD" method="_on_QuitBtn_focus_exited"]
+[connection signal="mouse_entered" from="HUD/GameOver/BtnContainer2/QuitBtn" to="HUD" method="_on_QuitBtn_mouse_entered"]
+[connection signal="button_down" from="HUD/GameOver/BtnContainer3/ExitBtn" to="HUD" method="_on_ExitBtn_button_down"]
+[connection signal="focus_entered" from="HUD/GameOver/BtnContainer3/ExitBtn" to="HUD" method="_on_ExitBtn_focus_entered"]
+[connection signal="focus_exited" from="HUD/GameOver/BtnContainer3/ExitBtn" to="HUD" method="_on_ExitBtn_focus_exited"]
+[connection signal="mouse_entered" from="HUD/GameOver/BtnContainer3/ExitBtn" to="HUD" method="_on_ExitBtn_mouse_entered"]
 [connection signal="timeout" from="deathmode" to="." method="_on_deathmode_timeout"]
 [connection signal="timeout" from="mali_deathmode" to="." method="_on_mali_deathmode_timeout"]

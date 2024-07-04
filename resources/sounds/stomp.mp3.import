@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/stomp.mp3-b0f4236f569c0e38f1af2b8196cd1109.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/stomp.mp3"
+dest_files=[ "res://.import/stomp.mp3-b0f4236f569c0e38f1af2b8196cd1109.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

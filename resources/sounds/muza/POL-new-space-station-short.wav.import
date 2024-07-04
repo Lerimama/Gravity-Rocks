@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/POL-new-space-station-short.wav-224dc83a19f55dcb2ef202feee38994f.sample"
+
+[deps]
+
+source_file="res://resources/sounds/muza/POL-new-space-station-short.wav"
+dest_files=[ "res://.import/POL-new-space-station-short.wav-224dc83a19f55dcb2ef202feee38994f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

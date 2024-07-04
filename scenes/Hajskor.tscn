@@ -1,32 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Hajskor.gd" type="Script" id=1]
-[ext_resource path="res://fonts/LLPIXEL3.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://textures/vesolje.jpg" type="Texture" id=3]
-[ext_resource path="res://textures/raketa.png" type="Texture" id=4]
-[ext_resource path="res://textures/ogenj_03.png" type="Texture" id=5]
-[ext_resource path="res://textures/ogenj_02.png" type="Texture" id=6]
-[ext_resource path="res://textures/ogenj_01.png" type="Texture" id=7]
-
-[sub_resource type="DynamicFont" id=3]
-size = 40
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=1]
-size = 100
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 40
-font_data = ExtResource( 2 )
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "ogenj_gasa",
-"speed": 7.0
-} ]
+[ext_resource path="res://resources/sounds/gui/btn_cancel_NFF-home-switch-off.wav" type="AudioStream" id=4]
+[ext_resource path="res://resources/FontFullLarge.tres" type="DynamicFont" id=8]
+[ext_resource path="res://gravity_rocks_theme.tres" type="Theme" id=9]
+[ext_resource path="res://resources/FontHS.tres" type="DynamicFont" id=10]
+[ext_resource path="res://resources/gui_arrow.tres" type="Texture" id=11]
 
 [node name="lestvica" type="Node2D"]
 script = ExtResource( 1 )
@@ -34,114 +13,150 @@ __meta__ = {
 "_edit_vertical_guides_": [ 882.0, 640.0 ]
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.529412 )
-position = Vector2( 672, 264 )
-texture = ExtResource( 3 )
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="prvi" type="Label" parent="CanvasLayer"]
-modulate = Color( 1, 0.890196, 0, 1 )
-margin_left = 400.0
-margin_top = 217.0
-margin_right = 883.0
-margin_bottom = 266.0
-custom_fonts/font = SubResource( 3 )
-text = "1. 00000"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="drugi" type="Label" parent="CanvasLayer"]
-margin_left = 400.0
-margin_top = 281.0
-margin_right = 883.0
-margin_bottom = 330.0
-custom_fonts/font = SubResource( 3 )
-text = "2. 00000"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tretji" type="Label" parent="CanvasLayer"]
-margin_left = 400.0
-margin_top = 345.0
-margin_right = 883.0
-margin_bottom = 394.0
-custom_fonts/font = SubResource( 3 )
-text = "3. 00000"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cetrti" type="Label" parent="CanvasLayer"]
-margin_left = 400.0
-margin_top = 409.0
-margin_right = 883.0
-margin_bottom = 458.0
-custom_fonts/font = SubResource( 3 )
-text = "4. 00000"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="peti" type="Label" parent="CanvasLayer"]
-margin_left = 400.0
-margin_top = 473.0
-margin_right = 883.0
-margin_bottom = 522.0
-custom_fonts/font = SubResource( 3 )
-text = "5. 00000"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="prvihpet" type="Label" parent="CanvasLayer"]
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -294.0
-margin_bottom = -172.0
-custom_fonts/font = SubResource( 1 )
-text = "PRVIH 5"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="bise" type="Label" parent="CanvasLayer" groups=["VisibleInGameOver"]]
-modulate = Color( 0.427451, 0.427451, 0.427451, 1 )
+[node name="prvi" type="Label" parent="."]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -216.0
-margin_top = 595.0
-margin_right = 216.0
-margin_bottom = -76.0
-custom_fonts/font = SubResource( 5 )
-text = "Stisn  [enter]  za meni"
+anchor_bottom = 0.5
+margin_left = 368.0
+margin_top = 220.0
+margin_right = 912.0
+margin_bottom = 264.0
+grow_horizontal = 2
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 10 )
+text = "1. 34 rocks destroyed"
 align = 1
-valign = 1
+
+[node name="drugi" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 379.5
+margin_top = 284.0
+margin_right = 903.5
+margin_bottom = 328.0
+grow_horizontal = 2
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 10 )
+text = "2. 24 rocks destroyed"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="raketa" type="Sprite" parent="."]
-visible = false
-position = Vector2( 404, 261 )
-rotation = 0.52171
-texture = ExtResource( 4 )
+[node name="tretji" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 379.5
+margin_top = 348.0
+margin_right = 903.5
+margin_bottom = 392.0
+grow_horizontal = 2
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 10 )
+text = "3. 24 rocks destroyed"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Ogenj_anim" type="AnimatedSprite" parent="."]
+[node name="cetrti" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 393.5
+margin_top = 412.0
+margin_right = 889.5
+margin_bottom = 456.0
+grow_horizontal = 2
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 10 )
+text = "4. 4 rocks destroyed"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="peti" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 393.5
+margin_top = 476.0
+margin_right = 889.5
+margin_bottom = 520.0
+grow_horizontal = 2
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 10 )
+text = "5. 4 rocks destroyed"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="prvihpet" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 459.0
+margin_top = 66.0
+margin_right = 822.0
+margin_bottom = 188.0
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 8 )
+text = "TOP 5"
+align = 1
+
+[node name="BtnContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 517.0
+margin_top = 606.0
+margin_right = 763.0
+margin_bottom = 645.0
+grow_horizontal = 2
+mouse_default_cursor_shape = 2
+custom_constants/separation = 16
+
+[node name="Icon" type="TextureRect" parent="BtnContainer"]
 visible = false
-position = Vector2( 243.535, 537.129 )
-rotation = 0.52171
-frames = SubResource( 2 )
-animation = "ogenj_gasa"
-playing = true
+margin_top = 9.0
+margin_right = 12.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 0, 20 )
+focus_neighbour_top = NodePath("../../BtnContainer2/HighscoresBtn")
+focus_neighbour_bottom = NodePath("../../BtnContainer2/HighscoresBtn")
+size_flags_vertical = 4
+theme = ExtResource( 9 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="BackBtn" type="Button" parent="BtnContainer"]
+margin_top = 3.0
+margin_right = 246.0
+margin_bottom = 36.0
+focus_neighbour_top = NodePath("../../BtnContainer3/ExitBtn")
+focus_neighbour_bottom = NodePath("../../BtnContainer2/HighscoresBtn")
+mouse_default_cursor_shape = 2
+size_flags_vertical = 4
+theme = ExtResource( 9 )
+text = "BACK TO MENU"
+align = 0
+
+[node name="nazaj" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.0
+
+[connection signal="button_down" from="BtnContainer/BackBtn" to="." method="_on_BackBtn_button_down"]
+[connection signal="focus_entered" from="BtnContainer/BackBtn" to="." method="_on_BackBtn_focus_entered"]
+[connection signal="focus_exited" from="BtnContainer/BackBtn" to="." method="_on_BackBtn_focus_exited"]
+[connection signal="mouse_entered" from="BtnContainer/BackBtn" to="." method="_on_BackBtn_mouse_entered"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/kaselj.mp3-68b66b80a231d73b12de7bf65b67ce7b.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/kaselj.mp3"
+dest_files=[ "res://.import/kaselj.mp3-68b66b80a231d73b12de7bf65b67ce7b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

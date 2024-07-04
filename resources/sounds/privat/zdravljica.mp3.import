@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zdravljica.mp3-b50d33a34bfb7d8dbf9054409870d175.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/privat/zdravljica.mp3"
+dest_files=[ "res://.import/zdravljica.mp3-b50d33a34bfb7d8dbf9054409870d175.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

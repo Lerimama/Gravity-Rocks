@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=9 format=2]
+
+[ext_resource path="res://resources/FontFull.tres" type="DynamicFont" id=1]
+[ext_resource path="res://resources/fonts/16bfZX.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 2 )
+
+[resource]
+Button/colors/font_color = Color( 1, 1, 1, 0.54902 )
+Button/colors/font_color_focus = Color( 1, 1, 1, 1 )
+Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
+Button/fonts/font = ExtResource( 1 )
+Button/styles/disabled = SubResource( 3 )
+Button/styles/focus = SubResource( 4 )
+Button/styles/hover = SubResource( 5 )
+Button/styles/normal = SubResource( 6 )
+Button/styles/pressed = SubResource( 7 )
+Label/fonts/font = SubResource( 2 )

@@ -4,7 +4,7 @@ extends Area2D
 
 signal raketa_dest
 
-var rotation_dir : int
+var rotation_dir
 export (float) var rotation_speed = 4.1
 
 var velocity : Vector2 # definiramo tip variable
@@ -12,13 +12,15 @@ var input_vector : Vector2 # ta vektor račun ali gre v rikver ali ne
 
 export (int) var accelaration = 900
 export (int) var max_speed = 700
-export (float) var friction = 1 # med igro se določa v proccess
+export (float) var friction = 1.0 # med igro se določa v proccess
 
 var velikost_ekrana = Vector2()
 
 var shield_status := 1
 
+
 func _ready() -> void:
+	
 	hide()
 	velikost_ekrana = get_viewport_rect().size
 	position = velikost_ekrana / 2
@@ -79,7 +81,9 @@ func wrap():
 	if position.y > velikost_ekrana.y:
 		position.y = 0
 
+
 func _on_Player_area_entered(area: Area2D) -> void:
+	
 	if shield_status == 0 && is_visible_in_tree() == true:
 		if area is Kamn:
 			emit_signal("raketa_dest", global_position) # global_position nam da pozicijo, ko seje to zgodilo in jo da v var ob klicu signala

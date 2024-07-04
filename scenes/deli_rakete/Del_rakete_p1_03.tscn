@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://textures/raketa_explozija/pl1/del_rakete_pl1_03.png" type="Texture" id=1]
+[ext_resource path="res://resources/textures/raketa_explozija/pl1/del_rakete_pl1_03.png" type="Texture" id=1]
 
 [node name="Del_rakete_p1_03" type="Area2D"]
 visible = false

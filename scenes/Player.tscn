@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://textures/raketa.png" type="Texture" id=1]
+[ext_resource path="res://resources/textures/raketa.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
-[ext_resource path="res://textures/shield.png" type="Texture" id=3]
-[ext_resource path="res://textures/ogenj_03.png" type="Texture" id=4]
-[ext_resource path="res://textures/ogenj_01.png" type="Texture" id=5]
-[ext_resource path="res://textures/ogenj_02.png" type="Texture" id=6]
-[ext_resource path="res://textures/shield_off.png" type="Texture" id=7]
-[ext_resource path="res://sounds/engin.mp3" type="AudioStream" id=8]
+[ext_resource path="res://resources/textures/shield.png" type="Texture" id=3]
+[ext_resource path="res://resources/textures/ogenj_03.png" type="Texture" id=4]
+[ext_resource path="res://resources/textures/ogenj_01.png" type="Texture" id=5]
+[ext_resource path="res://resources/textures/ogenj_02.png" type="Texture" id=6]
+[ext_resource path="res://resources/textures/shield_off.png" type="Texture" id=7]
+[ext_resource path="res://resources/sounds/engin.mp3" type="AudioStream" id=8]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -24,20 +24,20 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ null, ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), null ],
 "loop": false,
-"name": "ogenj_start",
-"speed": 5.0
+"name": "ogenj_bremza",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "ogenj_gasa",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ), null ],
+"frames": [ null, ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
 "loop": false,
-"name": "ogenj_bremza",
-"speed": 15.0
+"name": "ogenj_start",
+"speed": 5.0
 } ]
 
 [node name="Player" type="Area2D"]
@@ -77,7 +77,7 @@ animation = "ogenj_gasa"
 
 [node name="engin" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -12.506
+volume_db = -12.0
 pitch_scale = 1.1
 
 [connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]

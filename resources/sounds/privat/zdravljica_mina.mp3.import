@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zdravljica_mina.mp3-6c477fc4af21d540d7399a851bde0294.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/privat/zdravljica_mina.mp3"
+dest_files=[ "res://.import/zdravljica_mina.mp3-6c477fc4af21d540d7399a851bde0294.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://textures/mali_kamen.png" type="Texture" id=1]
+[ext_resource path="res://resources/textures/mali_kamen.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Mali_kamn.gd" type="Script" id=2]
 
 [node name="mali_kamn" type="Area2D" groups=["kamni", "mali_kamni"]]
