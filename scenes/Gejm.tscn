@@ -23,12 +23,12 @@
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 15 )
-region = Rect2( 101, 6, 24, 22 )
+region = Rect2( 69, 5, 24, 26 )
 margin = Rect2( 0, 2, 0, 0 )
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 15 )
-region = Rect2( 71, 6, 18, 22 )
+region = Rect2( 38, 6, 20, 22 )
 margin = Rect2( 0, 2, 0, 0 )
 
 [sub_resource type="AudioStreamRandomPitch" id=3]
@@ -38,7 +38,7 @@ random_pitch = 1.05
 [node name="Gejm" type="Node2D"]
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 60.0, 678.0, 45.0, 464.0, 504.0 ],
+"_edit_horizontal_guides_": [ 60.0, 688.0, 48.0, 464.0 ],
 "_edit_vertical_guides_": [ 640.0, 40.0, 1240.0 ]
 }
 
@@ -87,9 +87,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -225.0
-margin_top = -67.0
+margin_top = -55.0
 margin_right = -83.0
-margin_bottom = -37.0
+margin_bottom = -27.0
 theme = ExtResource( 14 )
 text = "LEVEL:"
 align = 2
@@ -100,17 +100,17 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -73.0
-margin_top = -67.0
+margin_top = -55.0
 margin_right = -37.0
-margin_bottom = -37.0
+margin_bottom = -27.0
 theme = ExtResource( 14 )
 text = "00"
 
 [node name="score_p1" type="Label" parent="HUD/Game"]
 margin_left = 137.0
-margin_top = 21.0
+margin_top = 25.0
 margin_right = 191.0
-margin_bottom = 49.0
+margin_bottom = 53.0
 theme = ExtResource( 14 )
 text = "0"
 __meta__ = {
@@ -119,16 +119,16 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="HUD/Game/score_p1"]
 margin_left = -33.0
-margin_top = 3.0
+margin_top = 1.0
 margin_right = -9.0
-margin_bottom = 25.0
+margin_bottom = 27.0
 texture = SubResource( 2 )
 
 [node name="lajf_p1" type="Label" parent="HUD/Game"]
 margin_left = 64.0
-margin_top = 21.0
+margin_top = 25.0
 margin_right = 82.0
-margin_bottom = 49.0
+margin_bottom = 53.0
 theme = ExtResource( 14 )
 text = "3"
 __meta__ = {
@@ -146,9 +146,9 @@ texture = SubResource( 1 )
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -94.0
-margin_top = 21.0
+margin_top = 25.0
 margin_right = -40.0
-margin_bottom = 51.0
+margin_bottom = 55.0
 grow_horizontal = 0
 theme = ExtResource( 14 )
 text = "32s"
@@ -158,9 +158,9 @@ align = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 40.0
-margin_top = -65.0
+margin_top = -55.0
 margin_right = 256.0
-margin_bottom = -37.0
+margin_bottom = -27.0
 theme = ExtResource( 14 )
 text = "TOP SCORE: %s"
 
@@ -217,6 +217,7 @@ text = "CONTINUE"
 
 [node name="Icon" type="TextureRect" parent="HUD/Pavza/BtnContainerContinue"]
 visible = false
+modulate = Color( 0.933333, 0.780392, 0.203922, 1 )
 margin_left = 174.0
 margin_top = 9.0
 margin_right = 186.0
@@ -243,7 +244,6 @@ custom_constants/separation = 12
 margin_top = 3.0
 margin_right = 147.0
 margin_bottom = 36.0
-focus_neighbour_left = NodePath("../../../GameOver/BtnContainer3/ExitBtn")
 mouse_default_cursor_shape = 2
 size_flags_vertical = 4
 theme = ExtResource( 14 )
@@ -251,6 +251,7 @@ text = "RESTART"
 
 [node name="Icon" type="TextureRect" parent="HUD/Pavza/BtnContainer"]
 visible = false
+modulate = Color( 0.933333, 0.780392, 0.203922, 1 )
 margin_top = 9.0
 margin_right = 18.0
 margin_bottom = 29.0
@@ -275,8 +276,6 @@ custom_constants/separation = 12
 [node name="QuitBtn" type="Button" parent="HUD/Pavza/BtnContainer2"]
 margin_right = 240.0
 margin_bottom = 39.0
-focus_neighbour_top = NodePath("../../BtnContainer/PlayBtn")
-focus_neighbour_bottom = NodePath("../../BtnContainer3/ExitBtn")
 mouse_default_cursor_shape = 2
 theme = ExtResource( 14 )
 text = "QUIT TO MENU"
@@ -284,12 +283,11 @@ align = 0
 
 [node name="Icon" type="TextureRect" parent="HUD/Pavza/BtnContainer2"]
 visible = false
+modulate = Color( 0.933333, 0.780392, 0.203922, 1 )
 margin_top = 9.0
 margin_right = 18.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 0, 20 )
-focus_neighbour_top = NodePath("../QuitBtn")
-focus_neighbour_bottom = NodePath("../QuitBtn")
 size_flags_vertical = 4
 theme = ExtResource( 14 )
 texture = ExtResource( 16 )
@@ -318,12 +316,11 @@ align = 0
 
 [node name="Icon" type="TextureRect" parent="HUD/Pavza/BtnContainer3"]
 visible = false
+modulate = Color( 0.933333, 0.780392, 0.203922, 1 )
 margin_top = 9.0
 margin_right = 18.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 0, 20 )
-focus_neighbour_top = NodePath("../ExitBtn")
-focus_neighbour_bottom = NodePath("../ExitBtn")
 size_flags_vertical = 4
 theme = ExtResource( 14 )
 texture = ExtResource( 16 )
@@ -368,9 +365,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -99.0
-margin_top = 90.0
+margin_top = 74.0
 margin_right = 99.0
-margin_bottom = 129.0
+margin_bottom = 113.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 2
 custom_constants/separation = 12
@@ -387,6 +384,7 @@ text = "PLAY AGAIN"
 
 [node name="Icon" type="TextureRect" parent="HUD/GameOver/BtnContainer"]
 visible = false
+modulate = Color( 0.933333, 0.780392, 0.203922, 1 )
 margin_top = 9.0
 margin_right = 18.0
 margin_bottom = 29.0
@@ -401,9 +399,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -120.0
-margin_top = 138.0
+margin_top = 122.0
 margin_right = 120.0
-margin_bottom = 177.0
+margin_bottom = 161.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 2
 custom_constants/separation = 12
@@ -418,12 +416,11 @@ align = 0
 
 [node name="Icon" type="TextureRect" parent="HUD/GameOver/BtnContainer2"]
 visible = false
+modulate = Color( 0.933333, 0.780392, 0.203922, 1 )
 margin_top = 9.0
 margin_right = 18.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 0, 20 )
-focus_neighbour_top = NodePath("../QuitBtn")
-focus_neighbour_bottom = NodePath("../QuitBtn")
 size_flags_vertical = 4
 theme = ExtResource( 14 )
 texture = ExtResource( 16 )
@@ -434,9 +431,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -91.0
-margin_top = 186.0
+margin_top = 170.0
 margin_right = 92.0
-margin_bottom = 225.0
+margin_bottom = 209.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 2
 custom_constants/separation = 12
@@ -452,11 +449,11 @@ align = 0
 
 [node name="Icon" type="TextureRect" parent="HUD/GameOver/BtnContainer3"]
 visible = false
+modulate = Color( 0.933333, 0.780392, 0.203922, 1 )
 margin_top = 9.0
 margin_right = 18.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 0, 20 )
-focus_neighbour_top = NodePath("../ExitBtn")
 focus_neighbour_bottom = NodePath("../ExitBtn")
 size_flags_vertical = 4
 theme = ExtResource( 14 )

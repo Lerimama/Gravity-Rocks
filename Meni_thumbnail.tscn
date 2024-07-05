@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://scripts/Meni.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Mali_kamn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://resources/gravity_rocks_gui_atlas.png" type="Texture" id=2]
 [ext_resource path="res://resources/textures/vesolje.jpg" type="Texture" id=3]
 [ext_resource path="res://resources/textures/raketa.png" type="Texture" id=4]
@@ -14,6 +14,7 @@
 [ext_resource path="res://resources/sounds/gui/btn_focus_change.wav" type="AudioStream" id=12]
 [ext_resource path="res://resources/sounds/gui/btn_confirm_NFF-home-switch-on.wav" type="AudioStream" id=13]
 [ext_resource path="res://resources/sounds/gui/btn_cancel_NFF-home-switch-off.wav" type="AudioStream" id=14]
+[ext_resource path="res://scenes/Kamn.tscn" type="PackedScene" id=15]
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
@@ -25,7 +26,7 @@ atlas = ExtResource( 2 )
 region = Rect2( 132, 4, 24, 26 )
 margin = Rect2( 0, 2, 0, 0 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": true,
@@ -34,15 +35,16 @@ animations = [ {
 } ]
 
 [node name="meni" type="Node2D"]
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 152.0, 352.0, 544.0 ],
 "_edit_vertical_guides_": [ 850.0 ]
 }
 
 [node name="space" type="Sprite" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0.470588 )
 position = Vector2( 597, 71 )
+z_index = -2
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
@@ -51,11 +53,13 @@ __meta__ = {
 [node name="Content" type="Control" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = 496.0
-margin_right = 1280.0
+margin_left = -40.0
+margin_right = 744.0
 margin_bottom = 720.0
+rect_scale = Vector2( 2, 2 )
 
 [node name="Title2" type="Label" parent="Content"]
+modulate = Color( 0.933333, 0.780392, 0.203922, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -69,7 +73,6 @@ text = "Rocks"
 uppercase = true
 
 [node name="Title1" type="Label" parent="Content"]
-modulate = Color( 0.933333, 0.211765, 0.203922, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -90,6 +93,7 @@ margin_right = 447.0
 margin_bottom = 512.0
 
 [node name="BtnContainer" type="HBoxContainer" parent="Content"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -101,6 +105,9 @@ margin_bottom = 1.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 2
 custom_constants/separation = 12
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="PlayBtn" type="Button" parent="Content/BtnContainer"]
 margin_top = 3.0
@@ -127,6 +134,7 @@ theme = ExtResource( 10 )
 texture = ExtResource( 11 )
 
 [node name="BtnContainer2" type="HBoxContainer" parent="Content"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -138,6 +146,9 @@ margin_bottom = 49.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 2
 custom_constants/separation = 12
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="HighscoresBtn" type="Button" parent="Content/BtnContainer2"]
 margin_right = 204.0
@@ -162,6 +173,7 @@ theme = ExtResource( 10 )
 texture = ExtResource( 11 )
 
 [node name="BtnContainer3" type="HBoxContainer" parent="Content"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -173,6 +185,9 @@ margin_bottom = 97.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 2
 custom_constants/separation = 12
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="ExitBtn" type="Button" parent="Content/BtnContainer3"]
 margin_right = 183.0
@@ -212,6 +227,7 @@ text = "Game controls"
 align = 2
 
 [node name="ControlLine" type="HBoxContainer" parent="Content"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -264,6 +280,7 @@ margin_bottom = 28.0
 text = "/"
 
 [node name="ControlLine2" type="HBoxContainer" parent="Content"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -328,6 +345,7 @@ margin_bottom = 28.0
 text = "/"
 
 [node name="ControlLine3" type="HBoxContainer" parent="Content"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -382,6 +400,7 @@ margin_bottom = 28.0
 text = "/"
 
 [node name="ControlLine4" type="HBoxContainer" parent="Content"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -446,17 +465,6 @@ margin_right = 18.0
 margin_bottom = 28.0
 text = "/"
 
-[node name="raketa" type="Sprite" parent="."]
-position = Vector2( 345.238, 281.099 )
-rotation = 0.52171
-texture = ExtResource( 4 )
-
-[node name="Ogenj_anim" type="AnimatedSprite" parent="."]
-position = Vector2( 187.535, 561.129 )
-rotation = 0.52171
-frames = SubResource( 2 )
-animation = "ogenj_gasa"
-
 [node name="sounds" type="Node2D" parent="."]
 
 [node name="naprej" type="AudioStreamPlayer" parent="sounds"]
@@ -470,6 +478,68 @@ volume_db = -15.0
 [node name="fokus" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 12 )
 volume_db = -15.0
+
+[node name="mali_kamn" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 1223, 838 )
+z_index = -1
+
+[node name="mali_kamn2" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 483, -140 )
+z_index = -1
+
+[node name="mali_kamn3" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 284, 804 )
+z_index = -1
+
+[node name="mali_kamn4" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 1407, -93 )
+z_index = -1
+
+[node name="mali_kamn5" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 1524, 654 )
+z_index = -1
+
+[node name="Kamn6" parent="." instance=ExtResource( 15 )]
+visible = false
+position = Vector2( 1095, -290 )
+z_index = -1
+
+[node name="Kamn7" parent="." instance=ExtResource( 15 )]
+visible = false
+position = Vector2( 534, 899 )
+z_index = -1
+
+[node name="Kamn8" parent="." instance=ExtResource( 15 )]
+visible = false
+position = Vector2( -189, 338 )
+z_index = -1
+
+[node name="Kamn9" parent="." instance=ExtResource( 15 )]
+visible = false
+position = Vector2( 1590, 281 )
+z_index = -1
+
+[node name="raketa" type="Sprite" parent="."]
+visible = false
+position = Vector2( 345.238, 281.099 )
+rotation = 0.52171
+z_index = 10
+texture = ExtResource( 4 )
+
+[node name="Ogenj_anim" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 187.535, 561.129 )
+rotation = 0.52171
+z_index = 10
+frames = SubResource( 5 )
+animation = "ogenj_gasa"
+frame = 1
+playing = true
 
 [connection signal="button_down" from="Content/BtnContainer/PlayBtn" to="." method="_on_PlayBtn_button_down"]
 [connection signal="focus_entered" from="Content/BtnContainer/PlayBtn" to="." method="_on_PlayBtn_focus_entered"]

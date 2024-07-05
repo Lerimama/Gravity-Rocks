@@ -55,6 +55,9 @@ func _on_ExitBtn_button_down() -> void:
 	get_tree().quit()
 
 
+# FOKUS
+
+
 func _on_PlayBtn_focus_entered() -> void:
 	
 	sound_fokus.play()

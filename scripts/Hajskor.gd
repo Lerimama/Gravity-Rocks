@@ -25,12 +25,6 @@ func _ready() -> void:
 	$tretji.text = str(tretji) + " rocks"
 	$cetrti.text = str(cetrti) + " rocks"
 	$peti.text = str(peti) + " rocks"
-	#	$CanvasLayer/prvi.text = "1. " + str(hajskor) + " rocks destroyed"
-	#	$CanvasLayer/drugi.text = "2. " + str(drugi) + " rocks destroyed"
-	#	$CanvasLayer/tretji.text = "3. " + str(tretji) + " rocks destroyed"
-	#	$CanvasLayer/cetrti.text = "4. " + str(cetrti) + " rocks destroyed"
-	#	$CanvasLayer/peti.text = "5. " + str(peti) + " rocks destroyed"
-	
 
 	hasjkors_in()
 		

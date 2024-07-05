@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scripts/Meni.gd" type="Script" id=1]
 [ext_resource path="res://resources/gravity_rocks_gui_atlas.png" type="Texture" id=2]
@@ -14,10 +14,12 @@
 [ext_resource path="res://resources/sounds/gui/btn_focus_change.wav" type="AudioStream" id=12]
 [ext_resource path="res://resources/sounds/gui/btn_confirm_NFF-home-switch-on.wav" type="AudioStream" id=13]
 [ext_resource path="res://resources/sounds/gui/btn_cancel_NFF-home-switch-off.wav" type="AudioStream" id=14]
+[ext_resource path="res://scenes/Mali_kamn.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/Kamn.tscn" type="PackedScene" id=16]
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
-region = Rect2( 38, 6, 20, 22 )
+region = Rect2( 102, 6, 20, 22 )
 margin = Rect2( 0, 2, 0, 0 )
 
 [sub_resource type="AtlasTexture" id=3]
@@ -36,7 +38,7 @@ animations = [ {
 [node name="meni" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 152.0, 352.0, 544.0 ],
+"_edit_horizontal_guides_": [ 152.0, 344.0, 544.0 ],
 "_edit_vertical_guides_": [ 850.0 ]
 }
 
@@ -69,7 +71,6 @@ text = "Rocks"
 uppercase = true
 
 [node name="Title1" type="Label" parent="Content"]
-modulate = Color( 0.933333, 0.211765, 0.203922, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -95,19 +96,21 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -80.0
-margin_top = -38.0
+margin_top = -46.0
 margin_right = 4.0
-margin_bottom = 1.0
+margin_bottom = -7.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 2
 custom_constants/separation = 12
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="PlayBtn" type="Button" parent="Content/BtnContainer"]
 margin_top = 3.0
 margin_right = 84.0
 margin_bottom = 36.0
 focus_neighbour_top = NodePath("../../BtnContainer3/ExitBtn")
-focus_neighbour_bottom = NodePath("../../BtnContainer2/HighscoresBtn")
 mouse_default_cursor_shape = 2
 size_flags_vertical = 4
 theme = ExtResource( 10 )
@@ -116,6 +119,7 @@ align = 0
 
 [node name="Icon" type="TextureRect" parent="Content/BtnContainer"]
 visible = false
+modulate = Color( 0.933333, 0.780392, 0.203922, 1 )
 margin_top = 9.0
 margin_right = 18.0
 margin_bottom = 29.0
@@ -132,18 +136,20 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -140.0
-margin_top = 10.0
+margin_top = 2.0
 margin_right = 64.0
-margin_bottom = 49.0
+margin_bottom = 41.0
 grow_horizontal = 2
+focus_neighbour_bottom = NodePath("../BtnContainer/PlayBtn")
 mouse_default_cursor_shape = 2
 custom_constants/separation = 12
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="HighscoresBtn" type="Button" parent="Content/BtnContainer2"]
 margin_right = 204.0
 margin_bottom = 39.0
-focus_neighbour_top = NodePath("../../BtnContainer/PlayBtn")
-focus_neighbour_bottom = NodePath("../../BtnContainer3/ExitBtn")
 mouse_default_cursor_shape = 2
 theme = ExtResource( 10 )
 text = "TOP SCORES"
@@ -151,6 +157,7 @@ align = 0
 
 [node name="Icon" type="TextureRect" parent="Content/BtnContainer2"]
 visible = false
+modulate = Color( 0.933333, 0.780392, 0.203922, 1 )
 margin_top = 9.0
 margin_right = 18.0
 margin_bottom = 29.0
@@ -167,17 +174,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -129.0
-margin_top = 58.0
+margin_top = 50.0
 margin_right = 54.0
-margin_bottom = 97.0
+margin_bottom = 89.0
 grow_horizontal = 2
 mouse_default_cursor_shape = 2
 custom_constants/separation = 12
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="ExitBtn" type="Button" parent="Content/BtnContainer3"]
 margin_right = 183.0
 margin_bottom = 39.0
-focus_neighbour_top = NodePath("../../BtnContainer2/HighscoresBtn")
 focus_neighbour_bottom = NodePath("../../BtnContainer/PlayBtn")
 mouse_default_cursor_shape = 2
 theme = ExtResource( 10 )
@@ -186,6 +195,7 @@ align = 0
 
 [node name="Icon" type="TextureRect" parent="Content/BtnContainer3"]
 visible = false
+modulate = Color( 0.933333, 0.780392, 0.203922, 1 )
 margin_left = 195.0
 margin_top = 9.0
 margin_right = 207.0
@@ -217,9 +227,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -247.0
-margin_top = 145.0
+margin_top = 153.0
 margin_right = 171.0
-margin_bottom = 173.0
+margin_bottom = 181.0
 grow_horizontal = 2
 theme = ExtResource( 10 )
 custom_constants/separation = 8
@@ -269,9 +279,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -181.0
-margin_top = 185.0
+margin_top = 193.0
 margin_right = 105.0
-margin_bottom = 213.0
+margin_bottom = 221.0
 grow_horizontal = 2
 theme = ExtResource( 10 )
 custom_constants/separation = 8
@@ -333,9 +343,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -174.5
-margin_top = 265.0
+margin_top = 273.0
 margin_right = 97.5
-margin_bottom = 293.0
+margin_bottom = 301.0
 grow_horizontal = 2
 theme = ExtResource( 10 )
 custom_constants/separation = 8
@@ -387,9 +397,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -186.0
-margin_top = 225.0
+margin_top = 233.0
 margin_right = 110.0
-margin_bottom = 253.0
+margin_bottom = 261.0
 grow_horizontal = 2
 theme = ExtResource( 10 )
 custom_constants/separation = 8
@@ -456,6 +466,7 @@ position = Vector2( 187.535, 561.129 )
 rotation = 0.52171
 frames = SubResource( 2 )
 animation = "ogenj_gasa"
+frame = 2
 
 [node name="sounds" type="Node2D" parent="."]
 
@@ -470,6 +481,26 @@ volume_db = -15.0
 [node name="fokus" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 12 )
 volume_db = -15.0
+
+[node name="mali_kamn" parent="." instance=ExtResource( 15 )]
+position = Vector2( 840, 832 )
+z_index = -1
+
+[node name="Kamn" parent="." instance=ExtResource( 16 )]
+position = Vector2( 368, -128 )
+z_index = -1
+
+[node name="mali_kamn2" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1176, -112 )
+z_index = -1
+
+[node name="Kamn2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1416, 416 )
+z_index = -1
+
+[node name="Kamn3" parent="." instance=ExtResource( 16 )]
+position = Vector2( -200, 272 )
+z_index = -1
 
 [connection signal="button_down" from="Content/BtnContainer/PlayBtn" to="." method="_on_PlayBtn_button_down"]
 [connection signal="focus_entered" from="Content/BtnContainer/PlayBtn" to="." method="_on_PlayBtn_focus_entered"]

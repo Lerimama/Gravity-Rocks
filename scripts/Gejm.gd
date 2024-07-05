@@ -1,8 +1,7 @@
 extends Node2D
 
 
-
-export var num_kamen = 1 # začetno število kamnov
+export var num_kamen = 0 # začetno število kamnov
 export var ekstra_num_kamen = 1 # vsako naslednje število kamnov
 
 var ostanek_kamnov = 0
@@ -11,7 +10,7 @@ var def_pozicija = Vector2(640, 360)
 var mali_follow : bool = false
 var shield_time: float = 3
 
-var runda_cajt = 10
+var runda_cajt = 0
 var cajt = 1 # čas do deathmodeta
 var cajt_vecanje = 5 # vsak spawn se poveča za ...
 
