@@ -18,13 +18,15 @@ func _input(event: InputEvent) -> void:
 		else: 
 			continue_game()
 
-
+	
+	
+	
 func _ready() -> void:
 	
 	hide()
 	modulate.a = 0
-
-
+	
+	
 func pause_game():
 
 	show()

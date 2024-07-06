@@ -158,8 +158,9 @@ align = 0
 [node name="Icon" type="TextureRect" parent="Content/BtnContainer2"]
 visible = false
 modulate = Color( 0.933333, 0.780392, 0.203922, 1 )
+margin_left = 216.0
 margin_top = 9.0
-margin_right = 18.0
+margin_right = 228.0
 margin_bottom = 29.0
 rect_min_size = Vector2( 0, 20 )
 focus_neighbour_top = NodePath("../HighscoresBtn")
@@ -232,7 +233,7 @@ margin_right = 171.0
 margin_bottom = 181.0
 grow_horizontal = 2
 theme = ExtResource( 10 )
-custom_constants/separation = 8
+custom_constants/separation = 12
 __meta__ = {
 "_edit_group_": true
 }
@@ -248,8 +249,8 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="Content/ControlLine"]
-margin_left = 93.0
-margin_right = 294.0
+margin_left = 97.0
+margin_right = 298.0
 margin_bottom = 28.0
 text = "Arrows, WASD"
 __meta__ = {
@@ -257,8 +258,8 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="Content/ControlLine"]
-margin_left = 302.0
-margin_right = 416.0
+margin_left = 310.0
+margin_right = 424.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 114, 0 )
 text = "D-Pad"
@@ -269,7 +270,8 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Content/ControlLine/Label3"]
 modulate = Color( 1, 1, 1, 0.54902 )
-margin_right = 20.0
+margin_left = -2.0
+margin_right = 18.0
 margin_bottom = 28.0
 text = "/"
 
@@ -284,7 +286,7 @@ margin_right = 105.0
 margin_bottom = 221.0
 grow_horizontal = 2
 theme = ExtResource( 10 )
-custom_constants/separation = 8
+custom_constants/separation = 12
 __meta__ = {
 "_edit_group_": true
 }
@@ -300,8 +302,8 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="Content/ControlLine2"]
-margin_left = 101.0
-margin_right = 240.0
+margin_left = 105.0
+margin_right = 244.0
 margin_bottom = 28.0
 text = "Spacebar"
 __meta__ = {
@@ -309,8 +311,8 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="Content/ControlLine2"]
-margin_left = 248.0
-margin_right = 286.0
+margin_left = 256.0
+margin_right = 294.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 38, 0 )
 align = 2
@@ -332,66 +334,12 @@ texture = SubResource( 4 )
 
 [node name="Label" type="Label" parent="Content/ControlLine2/Label3"]
 modulate = Color( 1, 1, 1, 0.54902 )
-margin_left = -2.0
-margin_right = 18.0
+margin_left = -4.0
+margin_right = 16.0
 margin_bottom = 28.0
 text = "/"
 
 [node name="ControlLine3" type="HBoxContainer" parent="Content"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -174.5
-margin_top = 273.0
-margin_right = 97.5
-margin_bottom = 301.0
-grow_horizontal = 2
-theme = ExtResource( 10 )
-custom_constants/separation = 8
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Label" type="Label" parent="Content/ControlLine3"]
-modulate = Color( 1, 1, 1, 0.54902 )
-margin_right = 178.0
-margin_bottom = 28.0
-grow_horizontal = 0
-text = "Mute music:"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="Content/ControlLine3"]
-margin_left = 186.0
-margin_right = 209.0
-margin_bottom = 28.0
-text = "M"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label3" type="Label" parent="Content/ControlLine3"]
-margin_left = 217.0
-margin_right = 272.0
-margin_bottom = 28.0
-rect_min_size = Vector2( 55, 0 )
-text = "L1"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Content/ControlLine3/Label3"]
-modulate = Color( 1, 1, 1, 0.54902 )
-margin_left = -2.0
-margin_right = 18.0
-margin_bottom = 28.0
-text = "/"
-
-[node name="ControlLine4" type="HBoxContainer" parent="Content"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -402,12 +350,12 @@ margin_right = 110.0
 margin_bottom = 261.0
 grow_horizontal = 2
 theme = ExtResource( 10 )
-custom_constants/separation = 8
+custom_constants/separation = 12
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Label" type="Label" parent="Content/ControlLine4"]
+[node name="Label" type="Label" parent="Content/ControlLine3"]
 modulate = Color( 1, 1, 1, 0.54902 )
 margin_right = 188.0
 margin_bottom = 28.0
@@ -418,18 +366,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="Content/ControlLine4"]
-margin_left = 196.0
-margin_right = 250.0
+[node name="Label2" type="Label" parent="Content/ControlLine3"]
+margin_left = 200.0
+margin_right = 254.0
 margin_bottom = 28.0
 text = "Esc"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="Content/ControlLine4"]
-margin_left = 258.0
-margin_right = 296.0
+[node name="Label3" type="Label" parent="Content/ControlLine3"]
+margin_left = 266.0
+margin_right = 304.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 38, 0 )
 align = 2
@@ -437,7 +385,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Icon" type="TextureRect" parent="Content/ControlLine4/Label3"]
+[node name="Icon" type="TextureRect" parent="Content/ControlLine3/Label3"]
 margin_left = 25.0
 margin_top = 1.0
 margin_right = 49.0
@@ -449,10 +397,64 @@ size_flags_vertical = 4
 theme = ExtResource( 10 )
 texture = SubResource( 3 )
 
+[node name="Label" type="Label" parent="Content/ControlLine3/Label3"]
+modulate = Color( 1, 1, 1, 0.54902 )
+margin_left = -4.0
+margin_right = 16.0
+margin_bottom = 28.0
+text = "/"
+
+[node name="ControlLine4" type="HBoxContainer" parent="Content"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -178.5
+margin_top = 273.0
+margin_right = 101.5
+margin_bottom = 301.0
+grow_horizontal = 2
+theme = ExtResource( 10 )
+custom_constants/separation = 12
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Content/ControlLine4"]
+modulate = Color( 1, 1, 1, 0.54902 )
+margin_right = 178.0
+margin_bottom = 28.0
+grow_horizontal = 0
+text = "Mute music:"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Content/ControlLine4"]
+margin_left = 190.0
+margin_right = 213.0
+margin_bottom = 28.0
+text = "M"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Content/ControlLine4"]
+margin_left = 225.0
+margin_right = 280.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 55, 0 )
+text = "L1"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="Content/ControlLine4/Label3"]
 modulate = Color( 1, 1, 1, 0.54902 )
-margin_left = -2.0
-margin_right = 18.0
+margin_left = -4.0
+margin_right = 16.0
 margin_bottom = 28.0
 text = "/"
 

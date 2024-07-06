@@ -4,6 +4,11 @@ onready var sound_naprej: AudioStreamPlayer = $sounds/naprej
 onready var sound_nazaj: AudioStreamPlayer = $sounds/nazaj
 onready var sound_fokus: AudioStreamPlayer = $sounds/fokus
 
+onready var play_btn: Button = $Content/BtnContainer/PlayBtn
+onready var highscores_btn: Button = $Content/BtnContainer2/HighscoresBtn
+onready var exit_btn: Button = $Content/BtnContainer3/ExitBtn
+
+
 
 func _ready() -> void:
 	
@@ -14,6 +19,12 @@ func _ready() -> void:
 	$Content/BtnContainer3/Icon.hide()
 	meni_in()
 	
+	
+	# if html5
+	#	html5_btns()
+
+
+
 		
 func meni_in():
 	
@@ -53,6 +64,14 @@ func _on_ExitBtn_button_down() -> void:
 	fade_tween.tween_property(self, "modulate:a", 0, 0.5)
 	yield(fade_tween, "finished")
 	get_tree().quit()
+
+
+func html5_btns():
+	
+	# GO meni
+	exit_btn.get_parent().hide()
+	play_btn.focus_neighbour_top = "../../BtnContainer2/HighscoresBtn"
+	highscores_btn.focus_neighbour_bottom = "../../BtnContainer/PlayBtn"	
 
 
 # FOKUS

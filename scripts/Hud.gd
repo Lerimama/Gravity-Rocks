@@ -19,7 +19,11 @@ func _ready() -> void:
 	
 	game_over.hide()
 	# pavza skrije sebe
-	
+
+	# if html5
+	#	html5_btns()
+		
+		
 func update_tajm_text(cajt):
 	
 	$Game/tajm.text = "%ss" % str(cajt)
@@ -68,6 +72,21 @@ func show_game_over(player_rank: int, player_score: int): # tole je funkcija, ki
 	yield(fade_tween, "finished")	
 	game_hud.hide()
 	get_parent().get_node("redzone").hide()
+
+
+func html5_btns():
+	
+	# pavza meni
+	pavza.exit_btn.get_parent().hide()
+	pavza.continue_btn.focus_neighbour_top = "../../BtnContainer2/QuitBtn"
+	pavza.quit_btn.focus_neighbour_bottom = "../../BtnContainerContinue/ContinueBtn"
+	
+	# GO meni
+	exit_btn.get_parent().hide()
+	play_btn.focus_neighbour_top = "../../BtnContainer2/QuitBtn"
+	play_btn.get_parent().rect_position.y += 32
+	quit_btn.focus_neighbour_bottom = "../../BtnContainer/PlayBtn"	
+	quit_btn.get_parent().rect_position.y += 32
 	
 
 func _on_PlayBtn_button_down() -> void:
