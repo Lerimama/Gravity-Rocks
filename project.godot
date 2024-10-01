@@ -34,9 +34,9 @@ _global_script_class_icons={
 
 config/name="Garavity Rocks"
 run/main_scene="res://scenes/Meni.tscn"
-boot_splash/image="res://boot_splash.png"
+boot_splash/image="res://resources/app/ratatata_boot_splash.png"
 boot_splash/use_filter=false
-config/icon="res://resources/textures/icon.png"
+config/icon="res://resources/app/project_icon.png"
 
 [debug]
 
